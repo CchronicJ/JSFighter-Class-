@@ -4,9 +4,11 @@ const DEFAULT_ATK = 5;
 const DEFAULT_DEF = 5;
 const DEFAULT_TEK = 5;
 let playerTurn = false;
+let logging = false;
 const P0NAME = "Crash";
 const P1NAME = "crashr";
 const P1CHARA = "saml";
+const P0CHARA = "sam"
 class Fighter {
   constructor(name, charaName) {
     //'contructor' is in all JS classes
@@ -41,8 +43,8 @@ let Player0;
 let Player1;
 
 function startup() {
-  Player0 = new Fighter("Crash", "crashr");
-  Player1 = new Fighter("Sam", "saml");
+  Player0 = new Fighter(P0NAME, P1NAME);
+  Player1 = new Fighter(P0CHARA, P1CHARA);
 
   console.log("My name is " + Player0.name + " and my ATK is " + Player0.atk)
   console.log("My name is " + Player1.name + " and my ATK is " + Player1.atk)
