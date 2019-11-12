@@ -3,6 +3,10 @@ const START_SP = 10;
 const DEFAULT_ATK = 5;
 const DEFAULT_DEF = 5;
 const DEFAULT_TEK = 5;
+let playerTurn = false;
+const P0NAME = "Crash";
+const P1NAME = "crashr";
+const P1CHARA = "saml";
 class Fighter {
   constructor(name, charaName) {
     //'contructor' is in all JS classes
