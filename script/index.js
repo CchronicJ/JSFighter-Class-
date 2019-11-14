@@ -70,14 +70,25 @@ function startup() {
   console.log("My name is " + Player1.name + " and my ATK is " + Player1.atk)
 }
 
-if Player1 = true then Player0 = false
-if Player0 = true the Player0 = true
-showcontrols(<button onClick = "Player1.single(Player0)"
-single
-</button>)
 
+function showControls() {
+  if (playerTurn == true) {
+    <button onClick = "Player1.single(Player0)">
+    single
+    </button>
+  } else {
 
+  }
 }
+
+// if Player1 = true then Player0 = false
+// if Player0 = true the Player0 = true
+// showcontrols(<button onClick = "Player1.single(Player0)"
+// single
+// </button>)
+//
+//
+// }
 
 
 
