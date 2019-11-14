@@ -53,13 +53,10 @@ class Fighter {
 }
 
 function startup() {
-  showControls(playerturn = true);
-  else {
-    showControls(playturn = false);
-    return;
-    console.log(if playerturn = true, Then yes);
-    console.log(if playerturn = false, Then no);
-  }
+  showcontrols(
+<button type = 'Attack' value = 'attack' onClick = 'attack'</button>
++=<button type = 'Attack' value = 'attack' onClick = 'attack'</button>
+)
   Player0 = new Fighter(P0NAME, P0CHARA);
   Player1 = new Fighter(P1NAME, P1CHARA);
 
