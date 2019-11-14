@@ -73,9 +73,7 @@ function startup() {
 
 function showControls() {
   if (playerTurn == true) {
-    controlsBox = '<button onClick = "Player1.single(Player0)"'>
-    single
-    </button>
+    controlsBox = '<button onClick = "Player1.single(Player0)">single</button>'
   } else {
 
   }
