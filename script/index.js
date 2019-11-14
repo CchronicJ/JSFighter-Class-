@@ -53,6 +53,11 @@ class Fighter {
 }
 
 function startup() {
+  showControls(playerturn = true);
+  else {
+    showControls(playturn = false);
+    return;
+  }
   Player0 = new Fighter(P0NAME, P0CHARA);
   Player1 = new Fighter(P1NAME, P1CHARA);
 
