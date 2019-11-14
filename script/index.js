@@ -53,11 +53,6 @@ class Fighter {
 }
 
 function startup() {
-  showcontrols(
-<button1 type = 'Attack' value = 'attack' onClick = 'attack'</button>
-+=<button2 type = 'Attack' value = 'attack' onClick = 'attack'</button>)
-console.log(button1 = Player0);
-console.log(button2 = Player1);
   Player0 = new Fighter(P0NAME, P0CHARA);
   Player1 = new Fighter(P1NAME, P1CHARA);
 
@@ -74,6 +69,14 @@ console.log(button2 = Player1);
   console.log("My name is " + Player0.name + " and my ATK is " + Player0.atk)
   console.log("My name is " + Player1.name + " and my ATK is " + Player1.atk)
 }
+
+showcontrols() {
+<button1 type = 'Attack' value = 'attack' onClick = 'attack'</button>
++=<button2 type = 'Attack' value = 'attack' onClick = 'attack'</button>
+console.log(button1 = Player0);
+console.log(button2 = Player1);
+}
+
 
 
 
