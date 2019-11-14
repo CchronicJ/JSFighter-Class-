@@ -73,6 +73,8 @@ function startup() {
 showcontrols() {
 <button1 type = 'Attack' value = 'attack' onClick = 'attack'</button>
 +=<button2 type = 'Attack' value = 'attack' onClick = 'attack'</button>
+if Player1 = 0
+if Player0 = 1
 console.log(button1 = Player0);
 console.log(button2 = Player1);
 }
