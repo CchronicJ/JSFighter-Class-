@@ -11,7 +11,7 @@
 </head>
 
 <!-- The HTML 'BODY' object loads the data we do see on the page -->
-<body onload="startup();">
+<body onload="startup();showControls();">
     <!-- All game content is kept in a 'gameBox' container -->
     <div id="gameBox">
 
@@ -29,7 +29,7 @@
         <!-- Bars box is filled later, too -->
         <div id="barsBox"></div>
         <!-- Control will change depending on game state, as well -->
-        <div id="controlsBox"> </div>
+        <div id="controlsBox"></div>
         <!-- This is where all the game text is output to, like a console -->
         <div id="outputBox">
             Click a button to begin!
