@@ -54,9 +54,10 @@ class Fighter {
 
 function startup() {
   showcontrols(
-<button type = 'Attack' value = 'attack' onClick = 'attack'</button>
-+=<button type = 'Attack' value = 'attack' onClick = 'attack'</button>
-)
+<button1 type = 'Attack' value = 'attack' onClick = 'attack'</button>
++=<button2 type = 'Attack' value = 'attack' onClick = 'attack'</button>)
+console.log(button1 = Player0);
+console.log(button2 = Player1);
   Player0 = new Fighter(P0NAME, P0CHARA);
   Player1 = new Fighter(P1NAME, P1CHARA);
 
