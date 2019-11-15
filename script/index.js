@@ -79,21 +79,6 @@ function showControls() {
   }
 }
 
-// if Player1 = true then Player0 = false
-// if Player0 = true the Player0 = true
-// showcontrols(<button onClick = "Player1.single(Player0)"
-// single
-// </button>)
-//
-//
-// }
-
-
-
-
-
-
-
 
 
 /*
