@@ -96,7 +96,7 @@ function attack(); {
   if (harddodge) {
     startHP = 20 - 10; }
     else if (successfuldodge) {
-      startHP = 20 - 0;  }
+      startHP = 20 - 1;  }
       else if (hit) {
         startHP = 20 - 1;  }
         else if (doubleHit) {
