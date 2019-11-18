@@ -97,11 +97,7 @@ function attack(); {
     startHP = 20 - 10; }
     else if (successfuldodge) {
       startHP = 20 - 0;  }
-  
-
-        }
-      }
-  }
+ 
 }
 
 /*
