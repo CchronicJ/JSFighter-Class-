@@ -97,7 +97,11 @@ function attack(); {
     startHP = 20 - 10; }
     else if (successfuldodge) {
       startHP = 20 - 0;  }
- 
+      else if (hit) {
+        startHP = 20 - 1;  }
+        else if (doubleHit) {
+          startHP = 20 - 2;  }
+
 }
 
 /*
