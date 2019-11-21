@@ -46,17 +46,17 @@ class Fighter {//declares class
   }
 
   //this logs who attacked who
-  attack(target) {
-    console.log(this.name + ' attacked ' + target.name);
+  attack(target) {//sets target of attack
+    console.log(this.name + ' attacked ' + target.name);//logs it
   }
 
-  single(target) {
-    this.attack(target);
+  single(target) {//sets attack type used on target
+    this.attack(target);//attacks
   }
 
-  double(target) {
-    this.attack(target);
-    this.attack(target);
+  double(target) {//sets attack types used on target
+    this.attack(target);//attacks
+    this.attack(target);//attacks again
   }
 
   //this logs that they recovered
