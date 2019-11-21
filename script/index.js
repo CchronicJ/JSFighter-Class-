@@ -36,13 +36,13 @@ class Fighter {//declares class
     // It gets run immediately when a new object is created from a class
 
     // Set all of our default values for this new fighter here
-    this.name = name;
-    this.hp = START_HP;
-    this.sp = START_SP;
-    this.atk = DEFAULT_ATK;
-    this.def = DEFAULT_DEF;
-    this.tek = DEFAULT_TEK;
-    this.charaName = charaName;
+    this.name = name;//sets the name
+    this.hp = START_HP;//sets the hp
+    this.sp = START_SP;//sets the sp
+    this.atk = DEFAULT_ATK;//sets attack
+    this.def = DEFAULT_DEF;//sets defense
+    this.tek = DEFAULT_TEK;//sets their techinique
+    this.charaName = charaName;//sets the charcaters name
   }
 
   //this logs who attacked who
