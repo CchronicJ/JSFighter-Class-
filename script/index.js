@@ -1,20 +1,20 @@
-const START_HP = 20;
-const START_SP = 10;
-const DEFAULT_ATK = 5;
-const DEFAULT_DEF = 5;
-const DEFAULT_TEK = 5;
+const START_HP = 20;//declares START_HP as a constant
+const START_SP = 10;//declares START_SP as a constant
+const DEFAULT_ATK = 5;//declares DEFAULT_ATK as a constant
+const DEFAULT_DEF = 5;//declares DEFAULT_DEF as a constant
+const DEFAULT_TEK = 5;//declares DEFAULT_TEK as a constant
 
 //sets constants names
-const P0NAME = 'Crash'
-const P0CHARA = 'crashr'
-const P1NAME = 'Sam'
-const P1CHARA = 'saml'
+const P0NAME = 'Crash'//Dcelares Player0's name
+const P0CHARA = 'crashr'//Delares Player0's character
+const P1NAME = 'Sam'//Declares player1's name
+const P1CHARA = 'saml'//Declares player1's character
 
-let playerTurn = false;
-let logging = true;
+let playerTurn = false;//Determines player's turn
+let logging = true;//stops a log that goes down the screen
 
-let Player0;
-let Player1;
+let Player0;//declares player
+let Player1;//declares player
 
 //varible for finding % of players HP used for the HealthBar
 let player0PercentHP;
