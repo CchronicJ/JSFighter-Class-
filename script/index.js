@@ -90,7 +90,7 @@ function startup() {//what shows during startup
   updateBars() //runs the updateBars() function
 }
 
-function showControls() {
+function showControls() {//shows the controls
   //checks to see which players turn it is and show the apropriate controls
   if (playerTurn) {
     //show buttons for player1 and overwrites player0's controls
@@ -101,12 +101,12 @@ function showControls() {
   }
 }
 //checks the target's HP is less than or equal to 0, Then retuns true or false.
-function koCheck(target, amount) {
-  target.hp = target.hp - amount;
-  if (target.hp <= 0) {
-    return true;
-  } else {
-    return false;
+function koCheck(target, amount) {//Declares knock out checking
+  target.hp = target.hp - amount;//Declares loss of hp in players health
+  if (target.hp <= 0) {//checks if health is lower or equal to 0
+    return true;//Declares them dead
+  } else {//or
+    return false;//declares them alive
   }
 }
 
