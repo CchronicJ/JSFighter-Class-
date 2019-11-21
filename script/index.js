@@ -30,8 +30,8 @@ let barsBox;//declares barsBox
 let controlsBox;//declares controlsBox
 let outputBox;//declares outputBox
 
-class Fighter {
-  constructor(name, charaName) {
+class Fighter {//declares class
+  constructor(name, charaName) {//It does the main stuff like construting their values
     //'contructor' is in all JS classes
     // It gets run immediately when a new object is created from a class
 
