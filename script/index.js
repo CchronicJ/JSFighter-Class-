@@ -161,15 +161,15 @@ function updateBars() {//Declares updateBars
 }
 
 // EndTurn code
-function endTurn() {
+function endTurn() {//Declares end of turn
   playerTurn = !playerTurn
-  if (kocheck(Player0, 0) || kocheck(Player1, 0)){
-    hideControls();
+  if (kocheck(Player0, 0) || kocheck(Player1, 0)){//declares if someone died or just dealt damage
+    hideControls();//hidescontrols
   }
 }
 
-function hideContols() {
-  controlsBox.innerHTML = "";
+function hideContols() {//declares hideContols
+  controlsBox.innerHTML = "";//sets controlsBox
 }
 
 
