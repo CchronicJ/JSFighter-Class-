@@ -23,12 +23,12 @@ let player0PercentSP;//helps distinguish player 0's SP
 let player1PercentSP;//helps distinguish player 1's SP
 
 // declared variables for the boxes
-let gameBox;
-let headerBox;
-let graphicsBox;
-let barsBox;
-let controlsBox;
-let outputBox;
+let gameBox;//declares gameBox
+let headerBox;//declares headerBox
+let graphicsBox;//declares graphicsBox
+let barsBox;//declares barsBox
+let controlsBox;//declares controlsBox
+let outputBox;//declares outputBox
 
 class Fighter {
   constructor(name, charaName) {
