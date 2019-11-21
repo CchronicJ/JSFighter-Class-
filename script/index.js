@@ -17,10 +17,10 @@ let Player0;//declares player
 let Player1;//declares player
 
 //varible for finding % of players HP used for the HealthBar
-let player0PercentHP;
-let player1PercentHP;
-let player0PercentSP;
-let player1PercentSP;
+let player0PercentHP;//helps distinguish player0's health for the health bar
+let player1PercentHP;//helps distinguish player1's health for the health bar
+let player0PercentSP;//helps distinguish player 0's SP
+let player1PercentSP;//helps distinguish player 1's SP
 
 // declared variables for the boxes
 let gameBox;
