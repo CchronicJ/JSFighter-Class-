@@ -79,12 +79,12 @@ function startup() {//what shows during startup
 
 
   //this shows the fighter images in the graphics box
-  graphicsBox.innerHTML = '<img id ="' + Player0.charaName + '" src="img/' + Player0.charaName + '_idle.png" alt="' + Player0.name + '" class="fighterIMG">'
-  graphicsBox.innerHTML += '<img id ="' + Player1.charaName + '" src="img/' + Player1.charaName + '_idle.png" alt="' + Player1.name + '" class="fighterIMG">'
+  graphicsBox.innerHTML = '<img id ="' + Player0.charaName + '" src="img/' + Player0.charaName + '_idle.png" alt="' + Player0.name + '" class="fighterIMG">'//sets player in the graphics box with it's img
+  graphicsBox.innerHTML += '<img id ="' + Player1.charaName + '" src="img/' + Player1.charaName + '_idle.png" alt="' + Player1.name + '" class="fighterIMG">'//sets player in the graphics box with it's img
 
 
-  console.log("My name is " + Player0.name + " and my ATK is " + Player0.atk)
-  console.log("My name is " + Player1.name + " and my ATK is " + Player1.atk)
+  console.log("My name is " + Player0.name + " and my ATK is " + Player0.atk)//logs arrackers name with the attack
+  console.log("My name is " + Player1.name + " and my ATK is " + Player1.atk)//logs arrackers name with the attack
 
   showControls() //runs the showControls() function
   updateBars() //runs the updateBars() function
