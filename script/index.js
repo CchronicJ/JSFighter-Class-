@@ -137,19 +137,19 @@ function updateBars() {//Declares updateBars
   }
 
   //Makes sure Player0's SP is not greater than 100% or less than 0%
-  if (player0PercentSP <= 0) {
-    player0PercentSP = 0
-  } else if (player0PercentSP > 100) {
-    player0PercentSP = 100
-  } else {
+  if (player0PercentSP <= 0) {//Declares SP either being equal to or below 0 keeping it above
+    player0PercentSP = 0//sets player SP only being able to go to 0 not any lower
+  } else if (player0PercentSP > 100) {//Declares SP being greater then 100
+    player0PercentSP = 100//keeps it from enter above 100
+  } else {//or
     player0PercentSP = player0PercentSP
   }
 
   //Makes sure Player1's SP is not greater than 100% or less than 0%
-  if (player1PercentSP <= 0) {
-    player1PercentSP = 0
-  } else if (player1PercentSP > 100) {
-    player1PercentSP = 100
+  if (player1PercentSP <= 0) {//Declares SP either being equal to or below 0 keeping it above
+    player1PercentSP = 0//sets player SP only being able to go to 0 not any lower
+  } else if (player1PercentSP > 100) {//Declares SP being greater then 100
+    player1PercentSP = 100//keeps it from enter above 100
   } else {
     player1PercentSP = player1PercentSP
   }
