@@ -111,28 +111,28 @@ function koCheck(target, amount) {//Declares knock out checking
 }
 
 
-function updateBars() {
+function updateBars() {//Declares updateBars
   //calculates the percent of HP
-  player0PercentHP = (Player0.hp / START_HP) * 100
-  player1PercentHP = (Player1.hp / START_HP) * 100
-  player0PercentHP = (Player0.sp / START_SP) * 100
-  player1PercentHP = (Player1.sp / START_SP) * 100
+  player0PercentHP = (Player0.hp / START_HP) * 100//percentage of player0's health
+  player1PercentHP = (Player1.hp / START_HP) * 100//percentage of player1's health
+  player0PercentHP = (Player0.sp / START_SP) * 100//percentage of player0's SP
+  player1PercentHP = (Player1.sp / START_SP) * 100//percentage of player1's SP
 
   //Makes sure Player0's health is not greater than 100% or less than 0%
-  if (player0PercentHP <= 0) {
-    player0PercentHP = 0
-  } else if (player0PercentHP > 100) {
-    player0PercentHP = 100
-  } else {
+  if (player0PercentHP <= 0) {//Declares health either being equal to or below 0 keeping it above
+    player0PercentHP = 0//sets player health only being able to go to 0 not any lower
+  } else if (player0PercentHP > 100) {//Declares health being greater then 100
+    player0PercentHP = 100//keeps it from enter above 100
+  } else {//or
     player0PercentHP = player0PercentHP
   }
 
   //Makes sure Player1's health is not greater than 100% or less than 0%
-  if (player1PercentHP <= 0) {
-    player1PercentHP = 0
-  } else if (player1PercentHP > 100) {
-    player1PercentHP = 100
-  } else {
+  if (player1PercentHP <= 0) {//Declares health either being equal to or below 0 keeping it above
+    player1PercentHP = 0//sets player health only being able to go to 0 not any lower
+  } else if (player1PercentHP > 100) {//Declares health being greater then 100
+    player1PercentHP = 100//keeps it from enter above 100
+  } else {//or
     player1PercentHP = player1PercentHP
   }
 
