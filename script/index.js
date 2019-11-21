@@ -60,22 +60,22 @@ class Fighter {//declares class
   }
 
   //this logs that they recovered
-  recover() {
-    console.log('Recovered!');
+  recover() {//sets recovery
+    console.log('Recovered!');//logs recovery
   }
 }
 
-function startup() {
-  Player0 = new Fighter(P0NAME, P0CHARA);
-  Player1 = new Fighter(P1NAME, P1CHARA);
+function startup() {//what shows during startup
+  Player0 = new Fighter(P0NAME, P0CHARA);//gives player the name
+  Player1 = new Fighter(P1NAME, P1CHARA);//gives player the name
 
   //this makes a shortcut for 'document.getElementById'
-  gameBox = document.getElementById('gameBox');
-  headerBox = document.getElementById('headerBox');
-  graphicsBox = document.getElementById('graphicsBox');
-  barsBox = document.getElementById('barsBox');
-  controlsBox = document.getElementById('controlsBox');
-  outputBox = document.getElementById('outputBox');
+  gameBox = document.getElementById('gameBox');//gets gamebox element
+  headerBox = document.getElementById('headerBox');//gets headerBox element
+  graphicsBox = document.getElementById('graphicsBox');//gets graphicsBox element
+  barsBox = document.getElementById('barsBox');//gets barsBox element
+  controlsBox = document.getElementById('controlsBox');//gets controlsBox element
+  outputBox = document.getElementById('outputBox');//gets outputBox element
 
 
   //this shows the fighter images in the graphics box
