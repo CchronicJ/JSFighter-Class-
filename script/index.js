@@ -46,28 +46,59 @@ class Fighter {//declares class
   }
 
   //this logs who attacked who
-  attack(target) {//sets target of attack
-    console.log(this.name + ' attacked ' + target.name);//logs it
+  attack(target) {
+    console.log(this.name + ' attacked ' + target.name); //logs attack
+    let damage = (Math.round(Math.random() + 1) * this.atk) //Does the attack with a random chance to be double. this is done by getting random number between one and zero, converts it to just one or zero and adds one to it making it randomly one or two. then it takes the one or two times the damage to deal random double damage
+    let reducedDamage = Math.round(damage / 4)
+    let dodge = Math.round(Math.random())
+    if (dodge) {
+      outputBox.innerHTML += '<br>' + target.name + ' dodged ' + this.name + '\'s attack and was hit only hit for ' + reducedDamage + ' damage'; // outputs to the outputbox
+      damage = reducedDamage
+      koCheck(target, damage); //runs ko check
+    } else {
+      outputBox.innerHTML += '<br>' + this.name + ' attacked ' + target.name + ' for ' + damage + ' damage!' // outputs to the outputbox
+      koCheck(target, damage); //runs ko check
+    }
   }
 
-  single(target) {//sets attack type used on target
-    this.attack(target);//attacks
+  single(target) {
+    this.attack(target);
+    endTurn();
   }
 
-  double(target) {//sets attack types used on target
-    this.attack(target);//attacks
-    this.attack(target);//attacks again
+  double(target) {
+    this.attack(target);
+    this.attack(target);
+    endTurn();
   }
 
   //this logs that they recovered
-  recover() {//sets recovery
-    console.log('Recovered!');//logs recovery
+  recover() {
+    console.log('Recovered!');
+
+    //save old text
+    let oldtext = outputBox.innerHTML
+    //if they have enough Sp
+    if (this.sp >=3) {
+      //minus 3 sp from total sp
+      this.sp = this.sp- 3;
+      //calculate recovery
+       let recovery = this.tek * 2;
+       //heal player
+       koCheck(this,-recovery);
+       outputBox.innerHTML = this.name + ' Recovered ' + recovery;
+    } else{
+      outputBox.innerHTML = "not enough SP"
+
+    }
+endTurn()
   }
 }
 
-function startup() {//what shows during startup
-  Player0 = new Fighter(P0NAME, P0CHARA);//gives player the name
-  Player1 = new Fighter(P1NAME, P1CHARA);//gives player the name
+
+function startup() {
+  Player0 = new Fighter(P0NAME, P0CHARA);
+  Player1 = new Fighter(P1NAME, P1CHARA);
 
   //this makes a shortcut for 'document.getElementById'
   gameBox = document.getElementById('gameBox');//gets gamebox element
@@ -82,22 +113,24 @@ function startup() {//what shows during startup
   graphicsBox.innerHTML = '<img id ="' + Player0.charaName + '" src="img/' + Player0.charaName + '_idle.png" alt="' + Player0.name + '" class="fighterIMG">'//sets player in the graphics box with it's img
   graphicsBox.innerHTML += '<img id ="' + Player1.charaName + '" src="img/' + Player1.charaName + '_idle.png" alt="' + Player1.name + '" class="fighterIMG">'//sets player in the graphics box with it's img
 
+  console.log('My name is ' + Player0.name + ' and my ATK is ' + Player0.atk);
+  console.log('My name is ' + Player1.name + ' and my ATK is ' + Player1.atk);
 
   console.log("My name is " + Player0.name + " and my ATK is " + Player0.atk)//logs arrackers name with the attack
   console.log("My name is " + Player1.name + " and my ATK is " + Player1.atk)//logs arrackers name with the attack
 
-  showControls() //runs the showControls() function
-  updateBars() //runs the updateBars() function
+  showControls(); //runs the showControls() function
+  updateBars(); //runs the updateBars() function
 }
 
 function showControls() {//shows the controls
   //checks to see which players turn it is and show the apropriate controls
   if (playerTurn) {
     //show buttons for player1 and overwrites player0's controls
-    controlsBox.innerHTML = '<button type="button" name="attack" onclick="Player1.single(Player0)">Single Attack!</button>'
+    controlsBox.innerHTML = '<button type="button" name="attack" onclick="Player1.single(Player0)">Single Attack!</button>';
   } else {
     //show buttons for player0 and overwrites player1's controls
-    controlsBox.innerHTML = '<button type="button" name="attack" onclick="Player0.single(Player1)">Single Attack!</button>'
+    controlsBox.innerHTML = '<button type="button" name="attack" onclick="Player0.single(Player1)">Single Attack!</button>';
   }
 }
 //checks the target's HP is less than or equal to 0, Then retuns true or false.
@@ -111,70 +144,43 @@ function koCheck(target, amount) {//Declares knock out checking
 }
 
 
-function updateBars() {//Declares updateBars
-  //calculates the percent of HP
-  player0PercentHP = (Player0.hp / START_HP) * 100//percentage of player0's health
-  player1PercentHP = (Player1.hp / START_HP) * 100//percentage of player1's health
-  player0PercentHP = (Player0.sp / START_SP) * 100//percentage of player0's SP
-  player1PercentHP = (Player1.sp / START_SP) * 100//percentage of player1's SP
-
-  //Makes sure Player0's health is not greater than 100% or less than 0%
-  if (player0PercentHP <= 0) {//Declares health either being equal to or below 0 keeping it above
-    player0PercentHP = 0//sets player health only being able to go to 0 not any lower
-  } else if (player0PercentHP > 100) {//Declares health being greater then 100
-    player0PercentHP = 100//keeps it from enter above 100
-  } else {//or
-    player0PercentHP = player0PercentHP
+//This function takes all the info to build an HP or SP bar, and ensure it is not greater than 100 or less than 0
+function updateBar(player, hpsp, min, max) {
+  let calculated = ((min / max) * 100)
+  if (calculated > 100) {
+    calculated = 100;
+  } else if (calculated < 0) {
+    calculated = 0;
   }
+  return '<div class="' + hpsp + 'Bar"><div style="width:' + calculated + '%;" id="p0' + hpsp + 'Fill" class="' + hpsp + 'Fill">' + min + '</div></div>'
+}
 
-  //Makes sure Player1's health is not greater than 100% or less than 0%
-  if (player1PercentHP <= 0) {//Declares health either being equal to or below 0 keeping it above
-    player1PercentHP = 0//sets player health only being able to go to 0 not any lower
-  } else if (player1PercentHP > 100) {//Declares health being greater then 100
-    player1PercentHP = 100//keeps it from enter above 100
-  } else {//or
-    player1PercentHP = player1PercentHP
-  }
-
-  //Makes sure Player0's SP is not greater than 100% or less than 0%
-  if (player0PercentSP <= 0) {//Declares SP either being equal to or below 0 keeping it above
-    player0PercentSP = 0//sets player SP only being able to go to 0 not any lower
-  } else if (player0PercentSP > 100) {//Declares SP being greater then 100
-    player0PercentSP = 100//keeps it from enter above 100
-  } else {//or
-    player0PercentSP = player0PercentSP
-  }
-
-  //Makes sure Player1's SP is not greater than 100% or less than 0%
-  if (player1PercentSP <= 0) {//Declares SP either being equal to or below 0 keeping it above
-    player1PercentSP = 0//sets player SP only being able to go to 0 not any lower
-  } else if (player1PercentSP > 100) {//Declares SP being greater then 100
-    player1PercentSP = 100//keeps it from enter above 100
-  } else {//or
-    player1PercentSP = player1PercentSP
-  }
-  barsBox.innerHTML = ''
-  barsBox.innerHTML += 'P0<div class="hpBar"><div style="height:' + player0PercentHP + '%; width: 100%;" id="p0HPfill" class="HPfill"></div></div>'//puts health percentage in a box
-  barsBox.innerHTML += '<div class="spBar"><div style="height:' + player0PercentSP + '%; width: 100%;" id="p0SPfill" class="SPfill"></div></div>'//puts SP percentage in a box
-  barsBox.innerHTML += 'P1<div class="hpBar"><div style="height:' + player1PercentHP + '%; width: 100%;" id="p1HPfill" class="HPfill"></div></div>'//puts health percentage in a box
-  barsBox.innerHTML += '<div class="spBar"><div style="height:' + player1PercentSP + '%; width: 100%;" id="p1SPfill" class="SPfill"></div></div>'//puts SP percentage in a box
+//This function makes the hp/sp bars and places them in the barsBox useing the updateBar
+function updateBars() {
+  barsBox.innerHTML = updateBar(Player0, 'hp', Player0.hp, START_HP)
+  barsBox.innerHTML += updateBar(Player0, 'sp', Player0.sp, START_SP)
+  barsBox.innerHTML += updateBar(Player1, 'hp', Player1.hp, START_HP)
+  barsBox.innerHTML += updateBar(Player1, 'sp', Player1.sp, START_SP)
 }
 
 // EndTurn code
 function endTurn() {//Declares end of turn
   playerTurn = !playerTurn
-  if (kocheck(Player0, 0) || kocheck(Player1, 0)){//declares if someone died or just dealt damage
-    hideControls();//hidescontrols
+  if (koCheck(Player0, 0) || koCheck(Player1, 0)){
+
+    hideControls();
+    updateBars();
+  } else {
+    showControls()
+    updateBars();
   }
 }
 
-function hideContols() {//declares hideContols
-  controlsBox.innerHTML = "";//sets controlsBox
+
+function hideControls() {
+
+  controlsBox.innerHTML = '';
 }
-
-
-
-
 
 
 /*
