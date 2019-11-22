@@ -11,7 +11,7 @@ const P1NAME = 'Sam'//Declares player1's name
 const P1CHARA = 'saml'//Declares player1's character
 
 let playerTurn = false;//Determines player's turn
-let logging = true;//stops a log that goes down the screen
+let logging = true;//declares log on
 
 let Player0;//declares player
 let Player1;//declares player
