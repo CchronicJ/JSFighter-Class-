@@ -49,13 +49,13 @@ class Fighter {//declares class
   attack(target) {
     console.log(this.name + ' attacked ' + target.name); //logs attack
     let damage = (Math.round(Math.random() + 1) * this.atk) //Does the attack with a random chance to be double. this is done by getting random number between one and zero, converts it to just one or zero and adds one to it making it randomly one or two. then it takes the one or two times the damage to deal random double damage
-    let reducedDamage = Math.round(damage / 4)
-    let dodge = Math.round(Math.random())
-    if (dodge) {
+    let reducedDamage = Math.round(damage / 4)//reduces damage done through a math function
+    let dodge = Math.round(Math.random())//declares dodge
+    if (dodge) {//Declares dodge again
       outputBox.innerHTML += '<br>' + target.name + ' dodged ' + this.name + '\'s attack and was hit only hit for ' + reducedDamage + ' damage'; // outputs to the outputbox
       damage = reducedDamage
       koCheck(target, damage); //runs ko check
-    } else {
+    } else {//or
       outputBox.innerHTML += '<br>' + this.name + ' attacked ' + target.name + ' for ' + damage + ' damage!' // outputs to the outputbox
       koCheck(target, damage); //runs ko check
     }
@@ -177,9 +177,9 @@ function endTurn() {//Declares end of turn
 }
 
 
-function hideControls() {
+function hideControls() {//declares hideControls
 
-  controlsBox.innerHTML = '';
+  controlsBox.innerHTML = '';//declares controlsBoxin the hideControls function
 }
 
 
